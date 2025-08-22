@@ -1,0 +1,90 @@
+/* ===== Reset singkat ===== */
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",sans-serif;color:#0f172a}
+button,input,select{font:inherit}
+
+/* ===== Latar gradasi & center ===== */
+.wrap{
+  min-height:100%;
+  display:grid;
+  place-items:center;
+  padding:32px;
+  background:
+    radial-gradient(1200px 600px at 10% 0%, #1f4fff33, transparent 60%),
+    radial-gradient(1200px 600px at 100% 100%, #ff5a5933, transparent 60%),
+    linear-gradient(145deg,#243b6c,#3b1d74);
+}
+
+/* ===== Kartu putih sesuai mockup ===== */
+.card{
+  width:min(720px,92vw);
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 24px 60px rgba(3,7,18,.25);
+  padding:28px 32px 22px;
+}
+h1{margin:0 0 14px;font-size:28px;font-weight:800;color:#0b1b3a}
+.emoji{font-weight:normal}
+
+/* ===== Bar input “pill” ===== */
+.pill{
+  display:grid; grid-template-columns: 1fr 170px 120px; gap:10px;
+  background:#eef1f5; border-radius:999px; padding:8px; align-items:center;
+}
+.pill input[type="text"]{
+  border:0; outline:none; background:transparent; padding:12px 14px; border-radius:999px;
+}
+.pill input[type="date"]{
+  border:0; outline:none; background:#fff; border-radius:999px; padding:10px 12px;
+  color:#0f172a; text-transform:uppercase;
+}
+.btn-add{
+  border:0; cursor:pointer; border-radius:999px; padding:12px 20px; font-weight:700; color:#fff;
+  background:linear-gradient(135deg,#ff7a4d,#ff5a59);
+  box-shadow:0 6px 16px rgba(255,96,72,.35);
+}
+.btn-add:hover{filter:brightness(1.05)}
+
+/* ===== Toolbar (filter, search, clear) ===== */
+.tools{display:flex; gap:10px; align-items:center; margin:14px 4px 6px; flex-wrap:wrap}
+.select,.search{
+  border:1px solid #e5e7eb; border-radius:10px; padding:9px 12px; background:#fff;
+}
+.btn-ghost{
+  border:1px solid #e5e7eb; background:#fff; color:#111827; border-radius:10px; padding:9px 12px; cursor:pointer;
+}
+.btn-ghost:hover{background:#f8fafc}
+
+/* ===== Alert ===== */
+.alert{margin:6px 4px 0; padding:10px 12px; border-radius:10px; background:#fee2e2; color:#991b1b}
+
+/* ===== Daftar item bergaya mockup ===== */
+.list{list-style:none;margin:14px 0 6px;padding:0;display:flex;flex-direction:column;gap:12px}
+.item{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:12px}
+.toggle{
+  width:22px;height:22px; border:none; padding:0; background:transparent center/cover no-repeat;
+  background-image:url("../images/unchecked.png"); cursor:pointer;
+}
+.item.done .toggle{background-image:url("../images/checked.png")}
+.title{color:#0f172a}
+.item.done .title{text-decoration:line-through; color:#64748b}
+.meta{font-size:.88rem;color:#6b7280}
+.actions{display:flex; align-items:center; gap:10px}
+.badge{display:inline-block; padding:4px 10px; border-radius:999px; font-size:.8rem; border:1px solid #e5e7eb; color:#0f172a; background:#f8fafc}
+.badge.done{background:#ecfeff; border-color:#a7f3d0; color:#065f46}
+.badge.overdue{background:#fff1f2; border-color:#fecaca; color:#991b1b}
+.btn-del{border:none;background:transparent;color:#0f172a;font-size:20px;cursor:pointer;line-height:1}
+.btn-del:hover{color:#ef4444}
+
+.empty{margin-top:6px;color:#6b7280;text-align:left}
+
+.hint{margin-top:8px;color:#9aa2b1;font-size:.85rem;text-align:left}
+
+/* A11y */
+.sr-only{position:absolute!important;clip:rect(1px,1px,1px,1px);padding:0;border:0;height:1px;width:1px;overflow:hidden}
+
+/* Responsif kecil */
+@media (max-width:640px){
+  .pill{grid-template-columns:1fr 1fr 110px}
+}
